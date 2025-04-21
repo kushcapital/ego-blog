@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="light transition-all duration-700 bg-secondary-light dark:bg-secondary">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Understanding Ego</title>
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            // Dark theme colors
+                            primary: {
+                                light: '#ffffff',
+                                DEFAULT: '#e0e0e0',
+                                dark: '#b0b0b0'
+                            },
+                            secondary: {
+                                light: '#303030',
+                                DEFAULT: '#121212',
+                                dark: '#000000'
+                            },
+                            accent: {
+                                light: '#f5f5f5',
+                                DEFAULT: '#e0e0e0',
+                                dark: '#a0a0a0'
+                            },
+                            // Light mode earth-tone theme
+                            'primary-light': {
+                                light: '#e07a5f',
+                                DEFAULT: '#d05c44',
+                                dark: '#b23a25'
+                            },
+                            'secondary-light': {
+                                light: '#f2e9e4',
+                                DEFAULT: '#e8d5c5',
+                                dark: '#c8b7a6'
+                            },
+                            'accent-light': {
+                                light: '#7ea08c',
+                                DEFAULT: '#618b73',
+                                dark: '#3a614e'
+                            }
+                        },
+                        fontFamily: {
+                            'playfair': ['"Playfair Display"', 'Times New Roman', 'serif'],
+                            'sourcesans': ['"Source Sans Pro"', 'Helvetica', 'Arial', 'sans-serif'],
+                            'lora': ['"Lora"', 'Georgia', 'serif'],
+                        },
+                    }
+                }
+            }
+        </script>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="font-sourcesans antialiased transition-all duration-700 bg-secondary-light text-gray-900 dark:bg-secondary dark:text-gray-100 dark:font-playfair">
+        <!-- Transition overlay -->
+        <div class="transition-wrapper"></div>
+        
+        <header class="relative flex flex-col justify-start items-center min-h-[320px] bg-cover bg-center shadow-xl overflow-hidden transition-all duration-700 ease-in-out border-b-[3px] border-primary-light dark:border-primary" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://cdn.prod.website-files.com/6501e17b507eeeaff049b022/6543c14394aa57612f8a5e17_6501e17b507eeeaff049ca62_1654434288-edwin_moleskine_header_test.webp');">
+            <div class="absolute inset-0 bg-gradient-radial pointer-events-none transition-all duration-700 ease-in-out from-accent-light/20 dark:from-accent/20 to-transparent"></div>
+            
+            <!-- Theme toggle button -->
+            <div class="absolute top-4 right-4 z-20">
+                <button id="theme-toggle" class="p-2 rounded-full backdrop-blur-sm transition-all duration-700 ease-in-out shadow-lg dark:bg-black/50 dark:border-white/20 dark:text-white dark:hover:bg-black/70 light:bg-white/50 light:border-black/20 light:text-gray-900 light:hover:bg-white/70 border">
+                    <i class="fas fa-moon text-xl transition-transform duration-700 dark:inline hidden"></i>
+                    <i class="fas fa-sun text-xl transition-transform duration-700 dark:hidden inline"></i>
+                </button>
+            </div>
+            
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center max-w-4xl mx-auto mt-12 p-4 sm:p-5 rounded-xl shadow-lg backdrop-blur-sm transition-all duration-700 ease-in-out animate-fade-in-down dark:bg-black/50 dark:text-white dark:border-white/10 light:bg-white/50 light:text-gray-900 light:border-black/10 border">Understanding Ego: Freudian Psychoanalytic Perspective</h1>
+            
+            <nav class="mt-auto mb-6 w-full z-10 px-2">
+                <ul class="nav-list flex flex-wrap justify-center items-center mx-auto w-fit max-w-full overflow-hidden rounded-full shadow-lg backdrop-blur-lg transition-all duration-700 ease-in-out dark:bg-black/70 dark:border-white/10 light:bg-white/70 light:border-black/10 border-2">   
+                    <li><a href="#introduction" class="inline-block px-2 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base no-underline uppercase tracking-wide font-bold transition-all duration-700 ease-in-out relative hover:-translate-y-1 dark:text-white dark:hover:text-gray-300 light:text-gray-900 light:hover:text-yellow-400 nav-active">Introduction</a></li>
+                    <li><a href="#freudian-perspective" class="inline-block px-2 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base no-underline uppercase tracking-wide font-bold transition-all duration-700 ease-in-out relative hover:-translate-y-1 dark:text-white dark:hover:text-gray-300 light:text-gray-900 light:hover:text-yellow-400">Freudian Perspective</a></li>
+                    <li><a href="#ego-influences" class="inline-block px-2 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base no-underline uppercase tracking-wide font-bold transition-all duration-700 ease-in-out relative hover:-translate-y-1 dark:text-white dark:hover:text-gray-300 light:text-gray-900 light:hover:text-yellow-400">Ego Influences</a></li>                  
+                    <li><a href="#development" class="inline-block px-2 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base no-underline uppercase tracking-wide font-bold transition-all duration-700 ease-in-out relative hover:-translate-y-1 dark:text-white dark:hover:text-gray-300 light:text-gray-900 light:hover:text-yellow-400">Development</a></li>
+                    <li><a href="#other-perspectives" class="inline-block px-2 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base no-underline uppercase tracking-wide font-bold transition-all duration-700 ease-in-out relative hover:-translate-y-1 dark:text-white dark:hover:text-gray-300 light:text-gray-900 light:hover:text-yellow-400">Other Perspectives</a></li>
+                    <li><a href="#contact" class="inline-block px-2 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base no-underline uppercase tracking-wide font-bold transition-all duration-700 ease-in-out relative hover:-translate-y-1 dark:text-white dark:hover:text-gray-300 light:text-gray-900 light:hover:text-yellow-400">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="max-w-6xl mx-auto p-8 rounded-3xl mt-6 shadow-2xl backdrop-blur-lg transition-all duration-700 ease-in-out border bg-secondary-light/70 text-gray-800 border-black/10 dark:bg-secondary/70 dark:text-gray-100 dark:border-white/10">
+            <section id="introduction" class="mb-16 p-8 rounded-2xl shadow-xl transition-all duration-700 ease-in-out hover:-translate-y-2 border bg-gradient-to-br from-accent-light/40 to-primary-light/40 border-black/10 dark:bg-gradient-to-br dark:from-black dark:to-gray-800 dark:border-white/10">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center pb-4 sm:pb-6 mb-4 sm:mb-6 border-b-2 transition-colors duration-300 dark:text-white dark:border-white/30 light:text-gray-900 light:border-black/30">Introduction</h2>
+                <p class="text-lg leading-relaxed tracking-wide text-justify px-6 my-8 transition-colors duration-300 dark:text-gray-100 light:text-gray-800">The term ego often refers to our sense of self or self-importance. In psychology, "ego" has different meanings depending on the theory. Sigmund Freud saw it as a central part of personality that mediates between primal needs and moral rules. Cognitive-behavioral psychology uses the concept of self-schema or self-concept rather than a literal "ego," focusing on our beliefs about ourselves. Mindfulness and spiritual traditions (like Buddhism) view the ego as an illusion of a separate self that can cause suffering. Despite these differences, all perspectives agree that the ego profoundly influences our thoughts, emotions, and behavior. This report explores what ego is from each perspective, how it develops, and its impact on our lives. We'll also examine how ego plays out in personal relationships and professional decision-making, with real-life examples. Finally, practical strategies are provided—drawing on mindfulness, cognitive reframing, self-awareness exercises, and habit changes—to help manage the ego in daily life, especially in moments when it's most triggered.</p>
+
+                <div class="relative max-w-xl mx-auto my-16 flex justify-center items-center group">
+                    <img src="https://www.simplypsychology.org/wp-content/uploads/psyche-1024x1024.jpg" alt="Psyche Image" class="w-full rounded-lg shadow-2xl transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:scale-[1.02] filter dark:grayscale dark:brightness-90 dark:contrast-110 light:brightness-105 light:contrast-105 z-10">
+                    <div class="absolute -inset-3 border rounded-lg z-0 transition-all duration-700 ease-in-out dark:border-white/30 light:border-primary-light"></div>
+                    <div class="absolute top-3 left-3 w-[calc(100%+12px)] h-[calc(100%+12px)] bg-gradient-to-br rounded-lg -z-10 transition-all duration-700 ease-in-out dark:from-white/20 dark:to-white/5 light:from-accent-light/30 light:to-primary-light/30"></div>
+                </div>
+            </section>
+            
+            <section id="freudian-perspective" class="mb-16 p-8 rounded-2xl shadow-xl transition-all duration-700 ease-in-out hover:-translate-y-2 border bg-gradient-to-br from-accent-light/40 to-primary-light/40 border-black/10 dark:bg-gradient-to-br dark:from-black dark:to-gray-800 dark:border-white/10">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center pb-4 sm:pb-6 mb-4 sm:mb-6 border-b-2 transition-colors duration-300 dark:text-white dark:border-white/30 light:text-gray-900 light:border-black/30">Freudian Psychoanalytic Perspective: The Mediating Ego</h2>
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-center py-3 sm:py-5 mb-2 sm:mb-3 border-b transition-colors duration-300 dark:text-white dark:border-white/20 light:text-gray-900 light:border-black/20">Freudian psychoanalysis</h3>
+                <p class="text-lg leading-relaxed tracking-wide text-justify px-6 my-8 transition-colors duration-300 dark:text-gray-100 light:text-gray-800">In Freudian psychoanalysis, the ego is one of three core components of personality, alongside the id and the superego. The id represents basic instincts and desires (operating on the pleasure principle of immediate gratification), and the superego represents internalized morals and ideals (the conscience). The ego develops from the id in early childhood as the young child interacts with reality. Through these social interactions (with parents and others), the child learns that not all wishes can be instantly fulfilled, and thus the ego emerges to handle the demands of the real world. In Freud's view, infants are born nearly all id – driven by hunger, discomfort, and impulses – but as they encounter limits (like having to wait to be fed or being taught not to grab things), the ego grows to negotiate between their urges and what's actually possible or acceptable. The superego develops a bit later (around the age of five, in Freud's theory) as the child internalizes parental values and societal rules, judging right from wrong.</p>
+            
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-center py-3 sm:py-5 mb-2 sm:mb-3 border-b transition-colors duration-300 dark:text-white dark:border-white/20 light:text-gray-900 light:border-black/20">What the Freudian Ego Is:</h3>
+                <p class="text-lg leading-relaxed tracking-wide text-justify px-6 my-8 transition-colors duration-300 dark:text-gray-100 light:text-gray-800">Freud's ego is essentially the executive mediator of the personality. It operates on the reality principle, meaning it strives to satisfy the id's desires in realistic, socially appropriate ways. The ego is often likened to a rider trying to guide the wild horse of the id. It weighs the costs and benefits of actions before allowing the id's impulses to be expressed. Unlike the purely unconscious id, the ego has conscious, preconscious, and unconscious aspects. In other words, the ego includes our rational, conscious thinking self, but it also uses unconscious processes to manage internal conflicts. Everyone "has an ego" in this neutral sense – it's our capacity to reason and self-regulate. (This is different from the everyday use of "ego" to mean an arrogant or inflated self-image. In Freud's theory, a strong ego is actually a good thing, implying a well-balanced self.)</p>
+                
+                <div class="relative max-w-xl mx-auto my-16 flex justify-center items-center group">
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*s3BxMNgpaXB0BT9R_salMQ.png" alt="Freud's Structure of Personality" class="w-full rounded-lg shadow-2xl transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:scale-[1.02] filter dark:grayscale dark:brightness-90 dark:contrast-110 light:brightness-105 light:contrast-105 z-10">
+                    <div class="absolute -inset-3 border rounded-lg z-0 transition-all duration-700 ease-in-out dark:border-white/30 light:border-primary-light"></div>
+                    <div class="absolute top-3 left-3 w-[calc(100%+12px)] h-[calc(100%+12px)] bg-gradient-to-br rounded-lg -z-10 transition-all duration-700 ease-in-out dark:from-white/20 dark:to-white/5 light:from-accent-light/30 light:to-primary-light/30"></div>
+                </div>
+            </section>
+
+            <section id="ego-influences" class="mb-16 p-8 rounded-2xl shadow-xl transition-all duration-700 ease-in-out hover:-translate-y-2 border bg-gradient-to-br from-accent-light/40 to-primary-light/40 border-black/10 dark:bg-gradient-to-br dark:from-black dark:to-gray-800 dark:border-white/10">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center pb-4 sm:pb-6 mb-4 sm:mb-6 border-b-2 transition-colors duration-300 dark:text-white dark:border-white/30 light:text-gray-900 light:border-black/30">How Ego Influences Behavior</h2>
+                <p class="text-lg leading-relaxed tracking-wide text-justify px-6 my-8 transition-colors duration-300 dark:text-gray-100 light:text-gray-800">The Freudian ego is constantly balancing three masters: the id's cravings, the superego's strictures, and the realities of the external world. For example, imagine you're stuck in a long work meeting and you feel hungry. Your id might scream "I want to eat right now!" Meanwhile, your superego might whisper "It would be rude to disrupt the meeting." Your ego's job is to resolve this: it keeps you sitting patiently until the meeting ends, perhaps by quietly suggesting you focus on the agenda or plan to grab lunch afterwards. Here, the ego delayed gratification (satisfying the id at a more appropriate time) in order to meet reality's demands. If the ego does its job well, we act with self-control and also get our needs met when appropriate. Freud believed a healthy personality is one where the ego effectively balances the id and superego.</p>
+
+                <p class="text-lg leading-relaxed tracking-wide text-justify px-6 my-8 transition-colors duration-300 dark:text-gray-100 light:text-gray-800">However, the ego can feel pressured by these competing forces, leading to anxiety. Freud famously described ego defense mechanisms – unconscious mental strategies the ego uses to protect itself from anxiety or guilt when it can't easily resolve the id-superego conflict. For instance, if someone's desire (id) strongly conflicts with their conscience (superego), their ego might deploy denial ("I don't really have that impulse"), rationalization ("Everybody cheats a little, so it's fine that I did"), or projection ("It's not me who feels this way; it's them") to reduce the internal tension. These defense mechanisms can distort reality, but they temporarily shield the person's self from distress. Overuse of defenses, though, can be unhealthy. Freud suggested that ego imbalances or excessive defenses lead to neuroses and issues in living.</p>
+
+                <div class="relative max-w-xl mx-auto my-16 flex justify-center items-center group">
+                    <img src="https://www.simplypsychology.org/defense-mechanisms.jpg" alt="Defense Mechanisms" class="w-full rounded-lg shadow-2xl transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:scale-[1.02] filter dark:grayscale dark:brightness-90 dark:contrast-110 light:brightness-105 light:contrast-105 z-10">
+                    <div class="absolute -inset-3 border rounded-lg z-0 transition-all duration-700 ease-in-out dark:border-white/30 light:border-primary-light"></div>
+                    <div class="absolute top-3 left-3 w-[calc(100%+12px)] h-[calc(100%+12px)] bg-gradient-to-br rounded-lg -z-10 transition-all duration-700 ease-in-out dark:from-white/20 dark:to-white/5 light:from-accent-light/30 light:to-primary-light/30"></div>
+                </div>
+            </section>
+
+            <section id="development" class="mb-16 p-8 rounded-2xl shadow-xl transition-all duration-700 ease-in-out hover:-translate-y-2 border bg-gradient-to-br from-accent-light/40 to-primary-light/40 border-black/10 dark:bg-gradient-to-br dark:from-black dark:to-gray-800 dark:border-white/10">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center pb-4 sm:pb-6 mb-4 sm:mb-6 border-b-2 transition-colors duration-300 dark:text-white dark:border-white/30 light:text-gray-900 light:border-black/30">Development and Real-World Applications</h2>
+                <p class="text-lg leading-relaxed tracking-wide text-justify px-6 my-8 transition-colors duration-300 dark:text-gray-100 light:text-gray-800">Freud did not outline specific stages for ego development (unlike his psychosexual stages for overall personality), but he implied the ego matures as the child encounters the external world's rules. A simple real-world illustration is how children learn self-control. A toddler might initially grab a toy from another child (id impulse). If the behavior is unchecked, the child is "all id." As caregivers set limits ("you must share" or "you have to wait your turn"), the child's ego starts to practice compromise – maybe waiting a few minutes or asking politely. Over time, the child develops an ego strong enough to handle frustration and social expectations. In adulthood, this translates to behaviors like patience, diplomacy, and planning. For example, if your coworker gets credit for something you contributed to, your id might want to angrily confront them or quit on the spot. Your superego might urge you to be gracious and not make a scene. A well-functioning ego could manage the situation by calmly talking to your manager later to ensure your work is recognized – a response that acknowledges your desire for fairness but stays within professional norms. In summary, the Freudian ego is the referee of the psyche: it develops in childhood as a response to reality, and it influences us by negotiating internal conflicts, employing defense mechanisms to guard our self-image, and enabling us to act in socially acceptable, reasoned ways.</p>
+            </section>
+
+            <section id="other-perspectives" class="mb-16 p-8 rounded-2xl shadow-xl transition-all duration-700 ease-in-out hover:-translate-y-2 border bg-gradient-to-br from-accent-light/40 to-primary-light/40 border-black/10 dark:bg-gradient-to-br dark:from-black dark:to-gray-800 dark:border-white/10">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center pb-4 sm:pb-6 mb-4 sm:mb-6 border-b-2 transition-colors duration-300 dark:text-white dark:border-white/30 light:text-gray-900 light:border-black/30">Other Perspectives on Ego</h2>
+                
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-center py-3 sm:py-5 mb-2 sm:mb-3 border-b transition-colors duration-300 dark:text-white dark:border-white/20 light:text-gray-900 light:border-black/20">Cognitive-Behavioral Perspective</h3>
+                <p class="text-lg leading-relaxed tracking-wide text-justify px-6 my-8 transition-colors duration-300 dark:text-gray-100 light:text-gray-800">In cognitive-behavioral psychology, the concept of "ego" is approached differently than in Freudian theory. Rather than viewing the ego as a psychic structure, cognitive-behavioral approaches focus on the "self-concept" or "self-schema" – organized patterns of thought about oneself that guide information processing. These self-schemas include beliefs about our attributes, roles, values, and goals. Unlike the Freudian ego that mediates between id and superego, self-schemas function as cognitive frameworks that help us process and organize information about ourselves. Our self-concept influences how we perceive situations, what we remember, and how we behave. For example, someone with a self-schema as "athletic" will notice and remember sports-related information and may be more likely to engage in physical activities.</p>
+                
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-center py-3 sm:py-5 mb-2 sm:mb-3 border-b transition-colors duration-300 dark:text-white dark:border-white/20 light:text-gray-900 light:border-black/20">Mindfulness and Spiritual Perspectives</h3>
+                <p class="text-lg leading-relaxed tracking-wide text-justify px-6 my-8 transition-colors duration-300 dark:text-gray-100 light:text-gray-800">Many mindfulness traditions, particularly those rooted in Buddhist philosophy, view the ego as an illusion that causes suffering. In this context, "ego" refers to the mistaken belief in a separate, permanent self. According to these traditions, we create a narrative identity by identifying with our thoughts, feelings, and experiences, then mistake this constructed identity for our true nature. This attachment to a fixed self-image leads to suffering when reality contradicts our ego-based expectations. Mindfulness practices aim to create awareness of the transient nature of the self, helping practitioners realize that thoughts and feelings arise and pass without defining who they truly are. This perspective differs significantly from the Freudian concept, seeing ego not as an essential mediator but as a source of suffering to transcend.</p>
+
+                <div class="relative max-w-xl mx-auto my-16 flex justify-center items-center group">
+                    <img src="https://www.verywellmind.com/thmb/7xBWy-LYsrU4Dr3M6bBC77L4Uv8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/what-is-self-concept-2795865-final-fb1c7816efdc4cc9bf6e11b5daf83780.png" alt="Mindfulness Meditation" class="w-full rounded-lg shadow-2xl transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:scale-[1.02] filter dark:grayscale dark:brightness-90 dark:contrast-110 light:brightness-105 light:contrast-105 z-10">
+                    <div class="absolute -inset-3 border rounded-lg z-0 transition-all duration-700 ease-in-out dark:border-white/30 light:border-primary-light"></div>
+                    <div class="absolute top-3 left-3 w-[calc(100%+12px)] h-[calc(100%+12px)] bg-gradient-to-br rounded-lg -z-10 transition-all duration-700 ease-in-out dark:from-white/20 dark:to-white/5 light:from-accent-light/30 light:to-primary-light/30"></div>
+                </div>
+            </section>
+            
+            <section id="contact" class="mb-16 p-8 rounded-2xl shadow-xl transition-all duration-700 ease-in-out hover:-translate-y-2 border bg-gradient-to-br from-accent-light/40 to-primary-light/40 border-black/10 dark:bg-gradient-to-br dark:from-black dark:to-gray-800 dark:border-white/10">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center pb-4 sm:pb-6 mb-4 sm:mb-6 border-b-2 transition-colors duration-300 dark:text-white dark:border-white/30 light:text-gray-900 light:border-black/30">Contact Us</h2>
+                <p class="text-lg leading-relaxed tracking-wide text-center px-6 mb-8 transition-colors duration-300 dark:text-gray-100 light:text-gray-800">Have questions about ego psychology or want to learn more? Reach out to us using the form below.</p>
+                
+                <form class="max-w-xl mx-auto p-6 rounded-xl shadow-lg border transition-all duration-700 ease-in-out dark:bg-black/40 dark:border-white/10 light:bg-white/80 light:border-black/10">
+                    <div class="mb-4">
+                        <label for="name" class="block mb-2 text-sm font-medium transition-colors duration-300 dark:text-white light:text-gray-800">Your Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border bg-transparent transition-colors duration-300 dark:text-white dark:border-white/20 dark:focus:border-white light:text-gray-800 light:border-black/20 light:focus:border-primary-light focus:outline-none" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="email" class="block mb-2 text-sm font-medium transition-colors duration-300 dark:text-white light:text-gray-800">Email Address</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border bg-transparent transition-colors duration-300 dark:text-white dark:border-white/20 dark:focus:border-white light:text-gray-800 light:border-black/20 light:focus:border-primary-light focus:outline-none" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="subject" class="block mb-2 text-sm font-medium transition-colors duration-300 dark:text-white light:text-gray-800">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border bg-transparent transition-colors duration-300 dark:text-white dark:border-white/20 dark:focus:border-white light:text-gray-800 light:border-black/20 light:focus:border-primary-light focus:outline-none" placeholder="Psychology Question" required>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 text-sm font-medium transition-colors duration-300 dark:text-white light:text-gray-800">Your Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border bg-transparent transition-colors duration-300 dark:text-white dark:border-white/20 dark:focus:border-white light:text-gray-800 light:border-black/20 light:focus:border-primary-light focus:outline-none" placeholder="Your message here..." required></textarea>
+                    </div>
+                    
+                    <div class="flex justify-center">
+                        <button type="submit" class="px-6 py-3 rounded-lg font-medium text-white bg-primary-light hover:bg-primary-light-dark transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-opacity-50 transform hover:scale-105 dark:bg-primary dark:hover:bg-primary-dark">Send Message</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+                        
+        <footer class="relative bg-cover bg-center min-h-[350px] mt-16 pt-12 pb-20 flex flex-col justify-center items-center border-t-[5px] transition-all duration-700 ease-in-out dark:border-white dark:bg-black light:border-primary-light" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGVnb3xlbnwwfHx8fDE2OTY5NTQ1MjA&ixlib=rb-4.0.3&q=80&w=1080);">
+            <div class="absolute inset-0 bg-gradient-radial from-accent/30 to-transparent transition-all duration-700 ease-in-out dark:from-white/10 light:from-accent-light/30"></div>
+
+            <p class="conclusion relative z-10 max-w-4xl mx-auto p-8 text-center text-lg leading-relaxed tracking-wide rounded-2xl shadow-2xl backdrop-blur-md border transition-colors duration-300 dark:bg-black/80 dark:text-white dark:border-white/10 light:bg-secondary-light/80 light:text-gray-800 light:border-black/10">The ego, a fundamental concept in psychology, serves as the central component of the human mind, mediating between the conscious and unconscious domains. It constructs and defines our sense of self, identity, and personal narrative, acting as the lens through which we view our existence. The ego functions as a dynamic intermediary, skillfully balancing our raw, primal instincts and deepest desires with our higher moral ideals, social norms, and ethical principles. In doing so, it profoundly influences how we perceive ourselves, interpret our experiences, and interact with the world, shaping both our inner reality and outward behavior in a complex interplay of thought, emotion, and action.</p>
+            
+            <div class="social-links relative z-10 flex justify-center my-8">
+                <a href="#" aria-label="Twitter" class="flex items-center justify-center w-12 h-12 mx-3 rounded-full text-white transition-all duration-500 ease-in-out group hover:-translate-y-2 hover:shadow-lg dark:bg-white/15 dark:text-white dark:border-white/10 dark:hover:bg-[#1DA1F2] light:bg-black/15 light:text-gray-900 light:border-black/10 light:hover:bg-[#1DA1F2] light:hover:text-white border">
+                    <i class="fab fa-twitter text-xl transition-transform duration-300 group-hover:scale-125"></i>
+                </a>
+                <a href="https://www.facebook.com/Kushwaharajeevranjan/" aria-label="Facebook" class="flex items-center justify-center w-12 h-12 mx-3 rounded-full text-white transition-all duration-500 ease-in-out group hover:-translate-y-2 hover:shadow-lg dark:bg-white/15 dark:text-white dark:border-white/10 dark:hover:bg-[#4267B2] light:bg-black/15 light:text-gray-900 light:border-black/10 light:hover:bg-[#4267B2] light:hover:text-white border">
+                    <i class="fab fa-facebook-f text-xl transition-transform duration-300 group-hover:scale-125"></i>
+                </a>
+                <a href="https://www.instagram.com/rajeev_kushwha/" aria-label="Instagram" class="flex items-center justify-center w-12 h-12 mx-3 rounded-full text-white transition-all duration-500 ease-in-out group hover:-translate-y-2 hover:shadow-lg dark:bg-white/15 dark:text-white dark:border-white/10 dark:hover:bg-[#E1306C] light:bg-black/15 light:text-gray-900 light:border-black/10 light:hover:bg-[#E1306C] light:hover:text-white border">
+                    <i class="fab fa-instagram text-xl transition-transform duration-300 group-hover:scale-125"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rajeevkushwaha?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn" class="flex items-center justify-center w-12 h-12 mx-3 rounded-full text-white transition-all duration-500 ease-in-out group hover:-translate-y-2 hover:shadow-lg dark:bg-white/15 dark:text-white dark:border-white/10 dark:hover:bg-[#0077B5] light:bg-black/15 light:text-gray-900 light:border-black/10 light:hover:bg-[#0077B5] light:hover:text-white border">
+                    <i class="fab fa-linkedin-in text-xl transition-transform duration-300 group-hover:scale-125"></i>
+                </a>
+            </div>
+            
+            <p class="copyright absolute bottom-5 w-full text-center text-sm py-3 tracking-wider transition-colors duration-300 dark:text-white/70 dark:bg-black/60 light:text-gray-800/70 light:bg-white/60">&copy; 2025 Rajeevkushwaha Project. All rights reserved.</p>
+
+            <a href="#" class="scroll-top fixed bottom-8 right-8 w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 transition-all duration-700 ease-in-out dark:bg-white/80 dark:text-black dark:hover:bg-white light:bg-primary-light/80 light:text-white light:hover:bg-primary-light" id="scrollTop" aria-label="Scroll to top">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+        </footer>
+
+        <!-- Custom JavaScript -->
+        <script src="script.js"></script>
+    </body>
+</html>
